@@ -1,5 +1,5 @@
 # SPLATPLAYS Portfolio Website
-
+SPLATPLAYS.github.io
 ![SPLATPLAYS Logo](images/logo.png)
 
 👋 Welcome to the **SPLATPLAYS portfolio website**, a platform to explore the skills, projects, and services offered by a dedicated developer. This website is hosted on GitHub Pages and is built using HTML, CSS, and JavaScript.
