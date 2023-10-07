@@ -47,6 +47,30 @@
         p {
             line-height: 1.6;
         }
+
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 1em;
+            text-align: center;
+            text-decoration: none;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
     </style>
 </head>
 
@@ -54,13 +78,21 @@
     <main>
         <h1>Hello, I am SPLATPLAYS. Welcome to My Website</h1>
 
-        <h2>About Me</h2>
-
-        <p>I find coding, creating projects, art, and teamwork fun. I specialize in coding, art, chatting, history, and teamwork. I use Linux, Windows, Mac, and Android for an all-round and fulfilling developer experience.</p>
+        <div class="button-container">
+            <a href="./about.html" class="button">About Me</a>
+            <a href="./contact.html" class="button">Contact Me</a>
+            <a href="./services.html" class="button">Services</a>
+            <a href="./skills.html" class="button">Skills</a>
+            <a href="./faq.html" class="button">FAQ</a>
+            <a href="./tools.html" class="button">Tools/Resources</a>
+            <a href="./tutorials.html" class="button">Tutorials/Documentation</a>
+            <a href="./portfolio.html" class="button">Portfolio/Projects</a>
+            <a href="./blog.html" class="button">Blog/Articles</a>
+        </div>
 
         <h2>Conclusion</h2>
 
-        <p>I hope you enjoyed my short webpage!</p>
+        <h3>I hope you enjoyed my short webpage!</h3>
     </main>
     <script src="index.js"></script>
 </body>
