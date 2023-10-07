@@ -6,10 +6,10 @@ fetch('visitorCount.json')
         data.count++;
         
         // Update the JSON file with the new count
-        fetch('https://api.github.com/repos/YOUR_USERNAME/YOUR_REPOSITORY/contents/visitorCount.json', {
+        fetch('https://api.github.com/repos/SPLATPLAYS/SPLATPLAYS.github.io/contents/visitorCount.json', {
             method: 'PUT',
             headers: {
-                'Authorization': 'token YOUR_PERSONAL_ACCESS_TOKEN',
+                'Authorization': 'token ${{ secrets.pat }}', // Use the secret here
                 'Accept': 'application/vnd.github.v3+json',
                 'Content-Type': 'application/json'
             },
