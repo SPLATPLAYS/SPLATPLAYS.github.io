@@ -1,0 +1,32 @@
+<input type="password" id="passwordInput" placeholder="Enter password">
+<button id="submitButton">Submit</button>
+<script>
+let attempts = 0; // Track the number of incorrect attempts
+
+document.getElementById('submitButton').addEventListener('click', function() {
+    if (attempts >= 3) {
+        alert('Too many incorrect attempts. Please try again later.');
+        return;
+    }
+
+    let password = document.getElementById('passwordInput').value;
+
+    if (password === 'test') {
+        setTimeout(function() {
+            // Redirect to the hidden page
+            window.location.href = 'hidden.html';
+        }, 1000); // Adjust the delay as needed (in milliseconds)
+    } else {
+        attempts++;
+        alert('Incorrect password. Please try again.');
+        document.getElementById('passwordInput').value = ''; // Clear the input field
+        document.getElementById('passwordInput').focus(); // Focus on the input field again
+
+        // Disable the button for 30 seconds
+        document.getElementById('submitButton').disabled = true;
+        setTimeout(function() {
+            document.getElementById('submitButton').disabled = false;
+        }, 30000); // 30 seconds
+    }
+});
+</script>
