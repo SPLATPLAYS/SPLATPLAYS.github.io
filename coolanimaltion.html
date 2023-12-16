@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinite Zooming Fractal</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+        canvas {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="fractalCanvas"></canvas>
+
+    <script>
+        const canvas = document.getElementById('fractalCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Set canvas size
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        // Set initial parameters
+        const centerX = -0.5;
+        const centerY = 0;
+        const initialZoom = 2;
+        let zoom = initialZoom;
+
+        // Function to draw the Mandelbrot set
+        function drawMandelbrot() {
+            for (let x = 0; x < canvas.width; x++) {
+                for (let y = 0; y < canvas.height; y++) {
+                    const zx = 1.5 * (x - canvas.width / 2) / (0.5 * zoom * canvas.width) + centerX;
+                    const zy = (y - canvas.height / 2) / (0.5 * zoom * canvas.height) + centerY;
+                    let zx2 = zx;
+                    let zy2 = zy;
+                    let iteration = 0;
+
+                    while (iteration < 100 && zx2 + zy2 < 4) {
+                        const temp = zx2 * zx2 - zy2 * zy2 + zx;
+                        zy2 = 2 * zx2 * zy2 + zy;
+                        zx2 = temp;
+                        iteration++;
+                    }
+
+                    const color = iteration === 100 ? 'black' : `hsl(${iteration * 3}, 100%, 50%)`;
+
+                    ctx.fillStyle = color;
+                    ctx.fillRect(x, y, 1, 1);
+                }
+            }
+        }
+
+        // Function to handle zooming
+        function handleZoom(event) {
+            const scale = event.deltaY > 0 ? 1.1 : 0.9;
+            zoom *= scale;
+            drawMandelbrot();
+        }
+
+        // Add event listener for zooming
+        canvas.addEventListener('wheel', handleZoom);
+
+        // Initial drawing
+        drawMandelbrot();
+    </script>
+</body>
+</html>
