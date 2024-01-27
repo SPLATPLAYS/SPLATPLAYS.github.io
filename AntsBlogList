@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ant Blogs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .blog-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .blog-list li {
+            background-color: #fff;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .blog-list li a {
+            color: #007bff;
+            text-decoration: none;
+            display: block;
+        }
+        .blog-list li a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ant Blogs</h1>
+    </header>
+    <div class="container">
+        <ul class="blog-list">
+            <li><a href="blog1.html">Ants: A Fascinating Study of Social Insects</a></li>
+            <li><a href="blog2.html">Ant Behavior: Insights from Recent Research</a></li>
+            <li><a href="blog3.html">Ant Species Diversity Around the World</a></li>
+            <li><a href="blog4.html">The Role of Ants in Ecosystems</a></li>
+            <li><a href="blog5.html">Ant Farming: How Some Ant Species Cultivate Fungi</a></li>
+            <li><a href="blog6.html">The Evolutionary History of Ants</a></li>
+        </ul>
+    </div>
+</body>
+</html>
